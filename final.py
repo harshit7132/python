@@ -115,7 +115,7 @@
 
 
 
-#############################new chat gpt code (above is working properly)
+############################# new chat gpt code (above is working properly) ###############################################################
 
 import os
 import requests
@@ -155,7 +155,7 @@ def generate_files():
         response = requests.get(url)
         if response.status_code == 200:
             html_content = response.text
-            
+ 
             # Extract CSS and JavaScript links from HTML
             soup = BeautifulSoup(html_content, 'html.parser')
             css_links = [link['href'] for link in soup.find_all('link', rel='stylesheet')]
@@ -200,7 +200,7 @@ def download():
     files_to_download = data.get('files')
     if not files_to_download:
         return jsonify({'error': 'No files specified for download'})
-    
+
     # Generate PDF file containing selected files
     pdf_filename = 'downloaded_files.pdf'
     with open(pdf_filename, 'wb') as pdf_file:
